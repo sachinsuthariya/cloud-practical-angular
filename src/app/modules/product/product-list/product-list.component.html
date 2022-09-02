@@ -1,0 +1,23 @@
+<h2 class="mt-5 pt-3 title">System X</h2>
+
+<div class="row col-md-12 m-3 header-input">
+    <div class="form-group col-md-4" >
+        <input type="text" id="search" placeholder="Search here..." (keyup)="onSearch($event)" class="form-control" />
+    </div>
+    <button class="col-md-2 btn btn-primary" (click)="add()"> Product <i class="bi bi-plus-lg"></i> </button>
+</div>
+
+  <div class="row col-md-12">
+  <div class="col-md-4 card m-3" style="width: 18rem;" *ngFor="let product of productList; let index = index; trackBy: trackByFn">
+    <div class="card-body">
+      <h5 class="card-title">{{product.name}}</h5>
+      <p class="card-text">SKU: {{product.SKU}}</p>
+      <strong> <i class="bi bi-currency-dollar mt-4"></i>{{product.price}}</strong>
+      <div class="action">  
+      <a class="btn btn-info m-2" title="Cart" (click)="addToCart(product.cartId, product.productId)"><i class="bi bi-cart3"></i></a>
+      <a class="btn btn-primary m-2" title="Edit" (click)="edit(product.productId)"><i class="bi bi-pencil"></i></a>
+      <a class="btn btn-danger m-2" title="Delete" (click)="deleteProduct(product.productId)"><i class="bi bi-trash"></i></a>
+    </div>
+    </div>
+  </div>
+</div>

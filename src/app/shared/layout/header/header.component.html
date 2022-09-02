@@ -1,0 +1,26 @@
+  <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary p-4">
+    <i class="navbar-brand bi bi-cart4"></i>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav"> -->
+        <!-- <a class="nav-item nav-link active" href="#">Home</a> -->
+        <!-- <a class="nav-item nav-link" href="#">Features</a>
+        <a class="nav-item nav-link" href="#">Pricing</a> -->
+        <!-- <div class="navbar-nav ml-auto logout pointer">
+          <i class="bi bi-power"></i>
+        </div>
+      </div>
+    </div>
+  </nav> -->
+
+  <div class="navbar bg-primary">
+    <i class="bi bi-cart4 brand" (click)="toHome()" title="System X"></i>
+    <div class="menu-items">
+
+    </div>
+    <div class="right-icon">
+      <i class="bi bi-cart3 pinter" title="Cart" style="font-size:24px" (click)="toCart()"></i>
+      <span class="cart-badge"> {{cartItemCount}} </span>
+      
+      <i class="bi bi-power pointer p-3 m-3" title="Logout" (click)="logout()"></i>
+    </div>
+  </div>

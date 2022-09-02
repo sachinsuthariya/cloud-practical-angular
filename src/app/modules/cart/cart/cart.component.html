@@ -1,0 +1,31 @@
+<div class="card p-4 m-4">
+    <h3>Shopping Cart</h3>
+    <hr>
+    <div *ngFor="let item of cartList">
+        <div class="card-body row col-md-12">
+            <div class="col-md-2">
+                <img src="../../../../assets/img/product.jpg" [alt]="item.name">
+            </div>
+            <div class="col-md-3">
+                <h5 class="card-title">{{item.name}}</h5>
+                <p class="card-text">{{item.SKU}}</p>
+                <div class="mt-5 ">
+                    <select class="form-control form-control-sm sm-input form-center" *ngIf="item.quantity <= 9" (change)="updateQuantity(item.cartId, $event)">
+                        <option *ngFor="let count of counts" [selected]="item.quantity === count">{{count}}</option>
+                    </select>
+                    <input type="text" class="form-control form-control-sm sm-input form-center" *ngIf="item.quantity > 9" [value]="item.quantity" (change)="updateQuantity(item.cartId, $event)">
+                    <span class="vr-bar"> | </span>
+                    <span class="pointer text-danger" (click)="removeFromCart(item.cartId)">Delete</span>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <span class="cost"><i class="bi bi-currency-dollar"></i> {{item.price}}</span>
+            </div>
+        </div>  
+        <hr>
+    </div>
+    <div class="card-body text-center" *ngIf="!cartList.length">
+        <h5 class="title">No Record Found</h5>
+        <p class="add-item" (click)="toProducts()">Click here to add products</p>
+    </div>
+</div>

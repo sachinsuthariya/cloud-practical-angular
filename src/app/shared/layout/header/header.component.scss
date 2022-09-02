@@ -1,0 +1,41 @@
+.right-icon {
+    font-size: 25px;
+    color: aliceblue;
+    margin-right: 10%;
+}
+
+.navbar {
+    height: 100px;
+    width: auto;
+}
+
+.brand {
+    font-size: 3rem;
+    position: relative;
+    color: aliceblue;
+    margin-left: 10%;
+}
+
+// .bi-cart3:after{
+//     content:attr(value);
+//     font-size:12px;
+//     color: black;
+//     background: red;
+//     border-radius:40%;
+//     padding:5px;
+//     position:relative;
+//     left:-8px;
+//     top:-10px;
+//     opacity:0.9;
+//     }
+
+.cart-badge{
+    font-size: 14px;
+    font-weight: 900;
+    position: absolute;
+    border: solid red;
+    border-radius: 60%;
+    height: 22px;
+    width: 16px;
+    background:red;
+}
